@@ -22,6 +22,9 @@
                                 <state key="normal" title=" 打地鼠 ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Kfc-Ip-Ynp" kind="show" id="mkb-1z-9u6"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小遊戲" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y35-df-gdB">
                                 <rect key="frame" x="161.66666666666666" y="30" width="91" height="36"/>
@@ -43,6 +46,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="113"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Bsc-vJ-j8d">
+            <objects>
+                <viewController id="Kfc-Ip-Ynp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cHQ-sj-c1m">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="1ew-jZ-Hah"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fVo-8s-3Oo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5MT-DT-hfe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="830" y="112"/>
         </scene>
     </scenes>
 </document>
