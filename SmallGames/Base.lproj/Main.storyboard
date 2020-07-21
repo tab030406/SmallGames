@@ -58,7 +58,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lpR-8k-gTT">
                                 <rect key="frame" x="1" y="152" width="412" height="412"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lpR-8k-gTT" secondAttribute="height" id="AU6-5b-uN1"/>
                                 </constraints>
@@ -78,11 +78,9 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMs-8M-sdG">
                                                     <rect key="frame" x="1" y="1" width="126" height="126"/>
-                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" title="Button"/>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="iMs-8M-sdG" firstAttribute="centerY" secondItem="0Qw-qx-kb9" secondAttribute="centerY" id="8CW-Se-9ha"/>
                                                 <constraint firstAttribute="trailing" secondItem="iMs-8M-sdG" secondAttribute="trailing" constant="1" id="Nof-13-XCW"/>

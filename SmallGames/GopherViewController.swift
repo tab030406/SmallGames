@@ -10,12 +10,13 @@ import UIKit
 
 class GopherViewController: UIViewController {
     @IBOutlet weak var collect: UICollectionView!
-    
+    var gopers : Set<Int>!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        gopers = []
         collect.delegate = self
         collect.dataSource = self
+        
 
        
     }
@@ -38,7 +39,8 @@ extension GopherViewController :UICollectionViewDataSource,UICollectionViewDeleg
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectCell", for: indexPath) as? CollectCell else {
             fatalError()
         }
-        cell.cellButton.setTitle("", for: .normal)
+        cell.cellButton.setImage(UIImage(named: "地洞"), for: .disabled)
+        cell.cellButton.setImage(UIImage(named: "地鼠"), for: .normal)
         return cell
     }
     
