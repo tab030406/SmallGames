@@ -9,11 +9,28 @@
 import UIKit
 
 class GopherViewController: UIViewController {
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var numberLable: UILabel!
     @IBOutlet weak var collect: UICollectionView!
-    var gopers : Set<Int>!
+    var holeArray : [Bool]!
+    var number : Int!
+    var timer : Timer?
+    var timeNumber : Int!
+    var cellNumber : Int!
+    var difficulty : Int!
     override func viewDidLoad() {
         super.viewDidLoad()
-        gopers = []
+        holeArray = []
+        number = 0
+        timeNumber = 20
+        cellNumber = 9
+        difficulty = 1
+        for _ in 0...cellNumber - 1 {
+            holeArray.append(false)
+        }
+        
+        start()
+            
         collect.delegate = self
         collect.dataSource = self
         
@@ -21,26 +38,103 @@ class GopherViewController: UIViewController {
        
     }
     
+    func start() {
+        number = 0
+        timeNumber = 20
+        timer?.invalidate()
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
 
-  
+            if self.timeNumber % 2 == 0 {
+                for i in 0...self.cellNumber - 1 {
+                    self.holeArray[i] = false
+                }
+                
+                
+                for _ in 1...self.difficulty {
+                    self.holeArray[Int.random(in: 0...self.cellNumber - 1)] = true
+                }
+            }
+                
+            self.timeLabel.text = "  時間：\(self.timeNumber ?? 0)"
+            self.timeNumber -= 1
+            self.collect.reloadData()
+            self.numberLable.text = "  分數：\(self.number ?? 0)"
+            self.timeLabel.text = "  時間：\(self.timeNumber ?? 0)"
+            if self.timeNumber == 0 {
+                
+                for i in 0...self.cellNumber - 1 {
+                    self.holeArray[i] = false
+                }
+
+                self.timer?.invalidate()
+            }
+            
+            
+        })
+    }
+
+    @IBAction func buttonAction(_ sender: UIButton) {
+        
+        timer?.invalidate()
+        
+        if sender.tag == 0 {
+            
+            start()
+            
+        } else if sender.tag == 1 {
+            
+            cellNumber = 9
+            difficulty = 1
+            
+        } else if sender.tag == 2 {
+            
+            cellNumber = 16
+            difficulty = 2
+            
+        } else if sender.tag == 3 {
+            
+            cellNumber = 25
+            difficulty = 3
+            
+        }
+        
+        holeArray = []
+        
+        for _ in 0...cellNumber - 1 {
+            
+            holeArray.append(false)
+            
+        }
+        
+        collect.reloadData()
+        
+    }
+    
 }
 
 class CollectCell: UICollectionViewCell {
     
-    @IBOutlet weak var cellButton: UIButton!
+    @IBOutlet weak var cellImage: UIImageView!
 }
 
 extension GopherViewController :UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        25
+        cellNumber
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectCell", for: indexPath) as? CollectCell else {
             fatalError()
         }
-        cell.cellButton.setImage(UIImage(named: "地洞"), for: .disabled)
-        cell.cellButton.setImage(UIImage(named: "地鼠"), for: .normal)
+        
+        if holeArray[indexPath.item] == false {
+            cell.cellImage.image = UIImage(named: "地洞")
+        } else {
+            cell.cellImage.image = UIImage(named: "地鼠")
+        }
+        
+        
         return cell
     }
     
@@ -53,8 +147,23 @@ extension GopherViewController :UICollectionViewDataSource,UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height = Int(collectionView.frame.height / 5)
+        var height = 3
+        if difficulty == 3 {
+            height = Int(collectionView.frame.height / 5)
+        } else if difficulty == 2 {
+            height = Int(collectionView.frame.height / 4)
+        } else {
+            height = Int(collectionView.frame.height / 3)
+        }
         return CGSize(width: height, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if holeArray[indexPath.item] == true {
+            holeArray[indexPath.item] = false
+            number += 1
+            collect.reloadData()
+        }
     }
     
     
