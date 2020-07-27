@@ -102,7 +102,7 @@
                             </label>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQR-AJ-wCp">
                                 <rect key="frame" x="4.9999999999999929" y="569" width="124.33333333333331" height="41"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="簡單">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -194,6 +194,9 @@
                         <outlet property="collect" destination="lpR-8k-gTT" id="ZAu-ng-0Fz"/>
                         <outlet property="numberLable" destination="jsE-CA-ukG" id="u21-ca-uJJ"/>
                         <outlet property="timeLabel" destination="jgs-If-o1P" id="0ld-57-0UJ"/>
+                        <outletCollection property="buttons" destination="jQR-AJ-wCp" collectionClass="NSMutableArray" id="TqS-Xo-blm"/>
+                        <outletCollection property="buttons" destination="jAa-Zf-ik0" collectionClass="NSMutableArray" id="aYk-tx-hnw"/>
+                        <outletCollection property="buttons" destination="Wi3-fp-ZNu" collectionClass="NSMutableArray" id="oCk-wD-mKc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5MT-DT-hfe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

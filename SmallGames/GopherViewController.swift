@@ -10,6 +10,7 @@ import UIKit
 
 class GopherViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet var buttons: [UIButton]!
     @IBOutlet weak var numberLable: UILabel!
     @IBOutlet weak var collect: UICollectionView!
     var holeArray : [Bool]!
@@ -70,7 +71,6 @@ class GopherViewController: UIViewController {
                 self.timer?.invalidate()
             }
             
-            
         })
     }
 
@@ -86,16 +86,19 @@ class GopherViewController: UIViewController {
             
             cellNumber = 9
             difficulty = 1
+            buttonChange()
             
         } else if sender.tag == 2 {
             
             cellNumber = 16
             difficulty = 2
+            buttonChange()
             
         } else if sender.tag == 3 {
             
             cellNumber = 25
             difficulty = 3
+            buttonChange()
             
         }
         
@@ -111,6 +114,23 @@ class GopherViewController: UIViewController {
         
     }
     
+    func buttonChange() {
+        for button in buttons {
+            
+            if button.tag == difficulty {
+                button.backgroundColor = UIColor.systemBlue
+            } else {
+                button.backgroundColor = UIColor.systemGreen
+            }
+            
+        }
+        
+        
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        timer?.invalidate()
+    }
 }
 
 class CollectCell: UICollectionViewCell {
