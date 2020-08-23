@@ -15,6 +15,7 @@
 		2474EF1F24BD9B5300B2A3CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2474EF1D24BD9B5300B2A3CE /* LaunchScreen.storyboard */; };
 		24C12D8D24C6CFF50038E63B /* GopherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C12D8C24C6CFF50038E63B /* GopherViewController.swift */; };
 		24C12D8F24D126BE0038E63B /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C12D8E24D126BE0038E63B /* MineViewController.swift */; };
+		24C12D9124D402A20038E63B /* TicTacToeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C12D9024D402A20038E63B /* TicTacToeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		2474EF2024BD9B5300B2A3CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24C12D8C24C6CFF50038E63B /* GopherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GopherViewController.swift; sourceTree = "<group>"; };
 		24C12D8E24D126BE0038E63B /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		24C12D9024D402A20038E63B /* TicTacToeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				2474EF1624BD9B5100B2A3CE /* ViewController.swift */,
 				24C12D8C24C6CFF50038E63B /* GopherViewController.swift */,
 				24C12D8E24D126BE0038E63B /* MineViewController.swift */,
+				24C12D9024D402A20038E63B /* TicTacToeViewController.swift */,
 				2474EF1824BD9B5100B2A3CE /* Main.storyboard */,
 				2474EF1B24BD9B5300B2A3CE /* Assets.xcassets */,
 				2474EF1D24BD9B5300B2A3CE /* LaunchScreen.storyboard */,
@@ -147,6 +150,7 @@
 				2474EF1724BD9B5100B2A3CE /* ViewController.swift in Sources */,
 				24C12D8D24C6CFF50038E63B /* GopherViewController.swift in Sources */,
 				2474EF1324BD9B5100B2A3CE /* AppDelegate.swift in Sources */,
+				24C12D9124D402A20038E63B /* TicTacToeViewController.swift in Sources */,
 				2474EF1524BD9B5100B2A3CE /* SceneDelegate.swift in Sources */,
 				24C12D8F24D126BE0038E63B /* MineViewController.swift in Sources */,
 			);
